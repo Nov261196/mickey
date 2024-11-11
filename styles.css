@@ -24,6 +24,12 @@
     display: block;
  }
 
+.header_navbar_item--has-notify:hover .header_notify{
+    display: block;
+
+}
+
+
  .header_navbar_item,
  .header_navbar_item_link{
     display: inline-block;
@@ -132,3 +138,134 @@
 
 
 
+/* NOTIFY CAUTION */
+
+
+.header_notify{
+    position: absolute;
+    top: 140%;
+    right: 0;
+    width: 404px;
+    border:1px solid #a8a7a7;
+    background-color: var(--white-color);
+    cursor: default;
+    transform-origin: calc(100% - 20px) top;
+    animation:headerNotifyGrowth ease-in 0.2s;
+    display: none; 
+}
+
+.header_notify::before{
+    content: "";
+    border-width: 20px 33px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent; 
+    position: absolute;
+    right: 4px;
+    top:-29px;
+}
+
+
+.header_notify::after{
+    content: "";
+   display: block;
+   position: absolute;
+   right: 0;
+   top:-10px;
+   width: 90px;
+   height: 12px;
+}
+
+
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform:scale(0) ;
+    }
+    to {
+        opacity: 1;
+        transform:scale(1) ;
+    }
+}
+            
+.header_notify-header{
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header_notify-header h3{
+    color: #999;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+}
+     
+.header_notify-list{
+    padding-left: 0px;
+}
+       
+.header_notify-item{
+    display: flex;
+}
+
+.header_notify-item:hover{
+    background-color: #afa8a8;
+
+}
+
+.header_notify-item--viewer{
+    background-color: rgba(238,75,43,0.1);
+
+}
+       
+.header_notify_link{
+    display: flex;
+    padding: 12px;
+    width: 100%;
+    text-decoration: none;
+
+
+}
+       
+.header_notify-img{
+    width: 50px;
+    object-fit: contains;
+}
+    
+.header_notify-info{
+    margin-left: 12px;
+    flex: 1;
+}
+       
+ .header_notify-name{
+    display: block;
+    font-size: 14px;
+    color:var(--text-color);
+    font-weight: 400;
+    line-height: 1.4rem;
+   
+    
+ }
+
+.header_notify-descriotion{
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color:#756F6E;
+    margin-top: 4px;
+} 
+
+.header_notify-footer{
+    display: flex;
+}
+
+.header_notify-footer-btn{
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    padding: 8px 0;
+    margin:auto;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+}
